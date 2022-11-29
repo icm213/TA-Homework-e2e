@@ -10,13 +10,10 @@ Given("I am on the {string} page", async (page) => {
 });
 
 Given("I am closing the pop-up ad if it exist", async()=>{
-    try{ const adCloseBtn = await $(`/html/body/div[19]/div[2]/div/button`)
+    try{ const adCloseBtn = await $(`.close`)
         await adCloseBtn.click()
         console.log('Add closed succesfully')
-        await browser.pause(1000)
-
     } catch {
         console.log('There is no pop-up ad')
-        await browser.pause(1000)
     }
 })
